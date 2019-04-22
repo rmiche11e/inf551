@@ -1,0 +1,160 @@
+body, h1, h2 {
+ margin:0;
+ padding:0;
+}
+body {
+ font-family: helvetica, sans-serif;
+ /* background-image: url(https://img.icons8.com/color/208/000000/folder-invoices.png);
+ background-repeat: no-repeat; */
+ background-image: url(background.jpg);
+ color:#143225;
+}
+h1 {
+ padding:10px;
+ background:#3D9970;
+ color:white;
+
+ /* background-image: url(asparagus.jpg); */
+}
+
+/*---------------------------*/
+/* Read Users */
+/*---------------------------*/
+#userList {
+ margin:0;
+ padding:0;
+ width:200px;
+ float:left;
+ margin:10px;
+ border:1px solid #4fc3fc;
+}
+
+#foodList h2 {
+ padding:10px;
+ margin:0;
+ color:white;
+}
+
+#foodList li {
+ padding:5px 10px;
+ border-top:1px solid #4fc3fc;
+ cursor: pointer;
+ color:white;
+ font-style: italic;
+}
+
+#foodList li:hover {
+ background: #4fc3fc;
+}
+
+#foodDetail {
+ float:left;
+ width:300px;
+ margin:10px;
+ margin-left:0;
+ padding: 25px;
+ /* background-image: url(asparagus.jpg); */
+ border:3px solid #3D9970;
+ background:white;
+ /* color:white; */
+}
+
+/* Add User Module */
+#add-user-module {
+ width:100px;
+ /* margin-bottom: 1px;
+ margin-left: 10px;
+ margin-top:10px; */
+}
+
+#add-user-module #open-add-user-form-btn {
+background: #3D9970;
+/* font-size: 1.5em; */
+color: white;
+/* padding-bottom: 5px; */
+}
+
+#add-user-module form {
+ position: absolute;
+ padding: 10px;
+ width: 150px;
+ background-color: #e1e1e1;
+ border: 1px solid #999;
+ display: none;
+}
+
+#add-user-module form input {
+ width: 97%;
+ margin: 2px 0;
+}
+
+#add-user-module form button {
+ background: #3D9970;
+ font-size: 1em;
+ padding: 0px 10px;
+ color: white;
+ margin-top: 10px;
+}
+
+
+#add-user-module:hover form {
+ display: block;
+}
+
+/*Edit*/
+#edit-user-module {
+  display: none;
+  position: absolute;
+  background-color: #e1e1e1;
+  border: 1px solid #999;
+  top:150px;
+  left: 100px;
+  padding: 10px;
+  width: 430px;
+}
+
+#user-list li:hover~#edit-user-module {
+  display: none;
+}
+
+#edit-user-module form button {
+ background: #3D9970;
+ font-size: 1em;
+ /* padding: 0px 10px; */
+ color: white;
+ margin-top: 10px;
+}
+
+.icon {
+  font-size:75px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+a{
+  color:#143225;
+}
+a:hover{
+  color:#3D9970;
+}
+
+.hidden{
+  display: none;
+}
+
+.scale{
+  background-image: url(scale.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 1000px;
+}
+
+.centered{
+  align-items: center;
+}

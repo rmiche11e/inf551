@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title>INF-551 Project</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+ <br/><h1>Patient Data Lookup and Management</h1><br/>
+<div class="container">
+     <br/>
+
+<!-- edit user module -->
+<section id="edit-user-module">
+<form>
+<h2>Edit Patient Data</h2>
+<br/>
+<input type="hidden" class="edit-userid">
+<div class="row">
+<div class="col-sm">
+First Name:
+</div>
+<div class="col-sm">
+<input type='text' data-key='FirstName' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+Last Name:
+</div>
+<div class="col-sm">
+<input type='text' data-key='LastName' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+Alcohol in Blood(%):
+</div>
+<div class="col-sm">
+<input type='text' data-key='AlcoholinBlood(%)' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+Blood Pressure - Diastolic:
+</div>
+<div class="col-sm">
+<input type='text' data-key='BloodPressure-Diastolic' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+Blood Pressure - Systolic:
+</div>
+<div class="col-sm">
+<input type='text' data-key='BloodPressure-Systolic' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+CO in Blood(%):
+</div>
+<div class="col-sm">
+<input type='text' data-key='COinBlood(%)' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+Heart Rate:
+</div>
+<div class="col-sm">
+<input type='text' data-key='HeartRate' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+Smoke Status:
+</div>
+<div class="col-sm">
+<input type='text' data-key='Smokestatus' class='edit-user-input'><br>
+</div>
+</div>
+<div class="row">
+<div class="col-sm">
+Weight (lb):
+</div>
+<div class="col-sm">
+<input type='text' data-key='Weight(lb)' class='edit-user-input'><br>
+</div>
+</div>
+<button type='button' id="edit-user-btn">Save Changes</button>
+
+</form>
+</section>
+
+ <div class="row justify-content-center">
+
+ <div class="dropdown show btn-group">
+   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Select a Patient
+   </a>
+
+   <div class="dropdown-menu" id="foodList"aria-labelledby="dropdownMenuLink">
+   </div>
+ </div>
+
+</div>
+ <br/>
+ <!-- <ul id="foodList"></ul> -->
+<div class="row">
+ <div id="patientName">
+ </div>
+ </div>
+ <div class="row justify-content-center">
+<br/>
+<div id="patientName">
+</div>
+<div id="foodDetail">
+<p> Patient health information will be displayed here for the selected individual. </p>
+<p> Please select a patient from the dropdown list above. </p>
+<p> To edit a patient's data, select "✎". </p>
+<p> To remove a patient entirely from the database, select "x". </p>
+   </div>
+  </div>
+    <br/>
+<div class="row justify-content-center">
+  <!-- add user module -->
+<section id="add-user-module" >
+<button id="open-add-user-form-btn">+ <br/>Add New Patient</button>
+<form>
+ First Name:<br>
+ <input type='text' data-key='FirstName' class='user-input'><br>
+ Last Name:<br>
+ <input type='text' data-key='LastName' class='user-input'><br>
+ <button type='button' id="add-user-btn">Add Patient</button>
+</form>
+</section>
+</div>
+ </div>
+ <!-- firebase sdk link goes here -->
+ <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+ <script type="text/javascript" src="app.js"></script>
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ </body>
+
+</html>

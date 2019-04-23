@@ -7,12 +7,20 @@
  <link rel="stylesheet" href="style.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
  </head>
- <body>
+ <body tyle="overflow:hidden; margin:0">
  <br/><h1>Welcome to the Health and Wellness Data Portal.</h1><br/>
- <div class="row vertical-center">
+ <br/>
+    <br/>
+       <br/>
+          <br/>
+          <br/>
+          <br/>
+ <div class="main row">
+
    <div class="col-sm text-center">
      <a href="individual.html">
      <i class="fas fa-swimmer icon"></i>
+     <br/>
      <br/>
      <h3> I am a healthy person. </h3>
    </a>
@@ -21,12 +29,22 @@
      <a href="practitioner.html">
      <i class="fas fa-user-md icon"></i>
      <br/>
+     <br/>
      <h3> I am a health practitioner. </h3>
    </a>
    </div>
 </div>
  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
  <!-- <script type="text/javascript" src="app.js"></script> -->
+ <script language="javascript">
+        function autoResizeDiv()
+        {
+            document.getElementById('main').style.height = window.innerHeight +'px';
+            document.getElementById('main').style.width = window.innerWidth +'px';
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
+    </script>
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

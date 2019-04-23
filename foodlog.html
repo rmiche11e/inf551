@@ -7,50 +7,37 @@
  <link rel="stylesheet" href="style.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
  </head>
- <body>
- <br/><h1>Record Your Health Data. <span style="float:right;"><a href="index.html"><i class="fas fa-home" style="color:white;"></i></a></span></h1><br/>
+ <body style="overflow:hidden; margin:0">
+ <br/><h1>Food Log</h1><br/>
+ <div class = "main text-center centered">
+ <img src="plate.svg" height="600" width="600" class="plate">
+ <form class="food">
+   <p>Food:</p>
+  <input type='text' style="text-align:center;" data-key='name' class='foodinput'><br>
+  <br/>
+  <p>Serving Size:</p>
+  <input type='text' style="text-align:center;" data-key='name' class='foodinput'><br>
+<br/>
+<br/>
+<br/>
+  <button type='button' id='foodlog'>Record Your Food</button>
+ </form>
  <br/>
-    <br/>
-       <br/>
-       <br/>
-       <br/>
- <div class="row">
-   <div class="col-sm text-center">
-     <a href="scale.html" id="scale">
-     <i class="fas fa-weight icon"></i>
-     <br/>
-     <br/>
-     <h3> Log Your Weight. </h3>
-   </a>
-   </div>
-   <div class="col-sm text-center">
-     <a href="foodlog.html" id="foodlog">
-     <i class="fas fa-apple-alt icon"></i>
-     <br/>
-     <br/>
-     <h3> Log Your Meals. </h3>
-   </a>
-   </div>
+ <!-- <button type='button' onclick="weigh()" id="scale">"Get on Scale"</button> -->
+ <p style="display:none;" id="message">Your food has been recorded. Would you like to record another item?</p>
+ <p><a href="review_weight.html" id="reviewRecords">View Nutrition Records</a></p>
+<br/>
 </div>
  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
- <script>
-   function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
-var vars = getUrlVars();
-console.log(vars['id']);
-   var a = document.getElementById('scale');
-   var b = document.getElementById('foodlog');
-   a.setAttribute("href","scale.html?id="+vars['id']);
-   b.setAttribute("href", "foodlog.html?id="+vars['id']);
-   console.log(a)
-   console.log(b)
- </script>
- <!-- <script type="text/javascript" src="app.js"></script> -->
+ <script type="text/javascript" src="foodlog.js"></script>
+ <script language="javascript">
+        function autoResizeDiv()
+        {
+            document.getElementById('main').style.height = window.innerHeight +'px';
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
+    </script>
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -7,7 +7,9 @@ body {
  /* background-image: url(https://img.icons8.com/color/208/000000/folder-invoices.png);
  background-repeat: no-repeat; */
  background-image: url(background.jpg);
+ background-size: cover;
  color:#143225;
+ font-size: 24px;
 }
 h1 {
  padding:10px;
@@ -148,13 +150,17 @@ a:hover{
   display: none;
 }
 
-.scale{
+/* .scale{
   background-image: url(scale.jpg);
   background-repeat: no-repeat;
   background-size: auto;
   height: 1000px;
-}
+} */
 
 .centered{
   align-items: center;
+
 }
+
+.plate { position: relative; top: 0; left: 0; }
+.food { position: absolute; top: 315px; left: 603px; }

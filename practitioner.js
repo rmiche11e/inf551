@@ -25,6 +25,71 @@ userRef.on("child_added", snap => {
    userList.append($a);
 });
 
+const userDeleteList = document.getElementById("userDeleteList");
+
+userRef.on("child_added", snap => {
+   let user = snap.val();
+   console.log(user);
+   let $label = document.createElement("label");
+   let $input = document.createElement("input");
+   let $del = document.createElement("span");
+
+   let $rowDiv = document.createElement("div");
+   let $colDiv1 = document.createElement("div");
+   let $colDiv2 = document.createElement("div");
+
+   $rowDiv.setAttribute("class", "row");
+   $colDiv1.setAttribute("class", "col-sm-6");
+   $colDiv2.setAttribute("class", "col-sm-3");
+
+   // $input.setAttribute("type", "radio");
+   // $input.setAttribute("name", "user-to-delete");
+   //
+   // $input.setAttribute("id", snap.key);
+   // $input.setAttribute("value", snap.key);
+   //
+   // $input.className = "dropdown-item";
+
+   $label.innerHTML = user.name;
+
+
+   $del.innerHTML = "x";
+   $del.setAttribute("userID", snap.key);
+   $del.addEventListener("click", deleteUser);
+
+   $colDiv1.append($label);
+   $colDiv2.append($del);
+
+
+   // $colDiv2.append($input);
+
+   $rowDiv.append($colDiv1);
+   $rowDiv.append($colDiv2);
+
+   userDeleteList.append($rowDiv);
+});
+
+// const deleteBtn = document.getElementById("delete-user-btn");
+// deleteBtn.addEventListener("click", deleteUser);
+
+function deleteUser(e) {
+  e.stopPropagation();
+  const userID = e.target.getAttribute("userID");
+  console.log(userID);
+  const userDeleteRef = dbRef.child('users/' + userID);
+    if (window.confirm("Are you sure you want to delete this patient?"))
+    {
+      userDeleteRef.remove();
+      location.reload();
+    }
+    console.log("user has been deleted");
+
+};
+const refresh = document.getElementById("refresh");
+refresh.addEventListener("click", resetData);
+function resetData(){
+location.reload(true);
+};
 function userClicked(e) {
   var userID = e.target.getAttribute("child-key");
   const weightRef = dbRef.child('weight');
@@ -142,10 +207,9 @@ function userClicked(e) {
                       .domain([0,42])
                          .range([height,0]);
                          });
-
       })
 
-      foods = [];
+      var foods = [];
       foodRef.orderByChild('id')
                .equalTo(userID)
                .on("value", function(snapshot) {
@@ -164,6 +228,7 @@ function userClicked(e) {
                   $trEntry.append($tdFood);
                   $trEntry.append($tdServing);
                   foodLog.append($trEntry);
+
           })
           document.getElementById('cntF').innerHTML = foods.length;
 
@@ -178,8 +243,6 @@ function userClicked(e) {
 
         var selText = $(this).text();
         $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
-
-
 
 };
 

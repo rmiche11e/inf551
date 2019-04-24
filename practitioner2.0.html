@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title>INF-551 Project</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+ </head>
+ <body>
+ <br/><h1>Patient Data Lookup and Management<span style="float:right;"><a href="index.html"><i class="fas fa-home" style="color:white;"></i></a></span></h1><br/>
+
+<div class="container">
+
+ <div class="row text-center">
+ <div class="dropdown show btn-group col-sm">
+   <a class="btn btn-secondary dropdown-toggle pb" style="background-color: #143225; font-size: 24px"href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     View Patient Data
+   </a>
+   <div class="dropdown-menu" id="userList"aria-labelledby="dropdownMenuLink">
+   </div>
+ </div>
+<!-- <div class="col-sm">
+ <button class="btn-group btn-secondary pb">Input Patient Data</button>
+</div> -->
+<div class="col-sm">
+ <button class="btn-group btn-secondary pb" data-toggle="modal" data-target="#myModal">Add New Patient</button>
+</div>
+</div>
+<br/>
+<div id="stats" style="display:none;">
+  <div class="row">
+  <div class="col-sm">
+  <br/>
+ <table class="table" style="width:400px">
+   <tbody>
+   <tr>
+     <td>Average Weight:</td>
+     <td id='avgW'></td>
+   </tr>
+   <tr>
+     <td>Average Heartrate:</td>
+     <td id='avgH'></td>
+   </tr>
+   <tr>
+     <td>Food Log Count:</td>
+     <td id='cntF'></td>
+   </tr>
+ </tbody>
+ </table>
+</div>
+<div class="col-sm">
+  <p> Weight Distribution </p>
+  <svg id="svg1"></svg>
+</div>
+</div>
+<div class="row">
+  <div class="col-sm">
+    <p> Heart Rate Distribution </p>
+    <svg id="svg2"> </svg>
+  </div>
+    <div class="col-sm">
+
+      <table class="table" id="foodLog" style="width:400px">
+        <tbody>
+          <tr>
+            <th>
+              Food Item
+            </th>
+            <th>
+              Serving Size
+            </th>
+          </tr>
+      </tbody>
+      </table>
+
+
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add New Patient</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+
+        <form>
+
+        <div class="row">
+        <div class="col-sm">
+        Patient Name:
+        </div>
+        <div class="col-sm">
+        <input type='text' data-key='name' class='user-input'><br>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-sm">
+        Patient Number:
+        </div>
+        <div class="col-sm">
+        <input type='text' data-key='id' class='user-input'><br>
+        </div>
+        </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+          <button type='button' class="btn btn-default" id="add-user-btn" data-dismiss="modal">Add Patient</button>
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+ <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+ <script type="text/javascript" src="practitioner.js"></script>
+ <script src="https://d3js.org/d3.v4.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ </body>
+
+</html>

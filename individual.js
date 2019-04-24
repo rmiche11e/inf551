@@ -28,12 +28,14 @@ usersRef.orderByChild('name')
         .on("value", function(snapshot) {
     console.log(snapshot.val());
     snapshot.forEach(function(data) {
-        user_data = data.val()
+        user_data = data.val();
+        userID = data.key;
         console.log(data.key);
         var a = document.getElementById('record');
         var b = document.getElementById('review');
         a.setAttribute("href","record.html?id="+data.key);
         b.setAttribute("href","review.html?id="+data.key);
+    return userID;
     });
     console.log(user_data);
     console.log(user_data['name']);
@@ -44,3 +46,50 @@ document.getElementById('mainMenu').style.display = "inline";
 
 });
 };
+
+const deleteButton = document.getElementById("delete");
+deleteButton.addEventListener("click", deleteAllRecords);
+
+function deleteAllRecords(e) {
+
+  e.stopPropagation();
+  // const foodRef = dbRef.child('foodlog')
+  //                      .orderByChild('name')
+  //                      .equalTo(userID);
+  //
+  // const weightRef = dbRef.child('weight')
+  //                        .orderByChild('name')
+  //                        .equalTo(userID);
+  //
+  // const heartRef = dbRef.child('heartrate')
+  //                       .orderByChild('name')
+  //                       .equalTo(userID);
+    if (window.confirm("Are you sure you want to delete all of your health records?"))
+    {
+      dbRef.orderByChild('foodlog')
+           .equalTo(userID)
+           .once('value')
+           .then(function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+              console.log(childSnapshot);
+              dbRef.child(childSnapshot.key).remove();
+            });
+});
+//       dbRef.child('foodlog')
+//            .orderByChild('name')
+//            .equalTo(userID)
+//            .remove();
+//       dbRef.child('weight')
+//            .orderByChild('name')
+//            .equalTo(userID)
+//            .remove();
+//       dbRef.child('heartrate')
+//            .orderByChild('name')
+//            .equalTo(userID)
+//            .remove();
+      alert("You have deleted all of your health records from this system.")
+    }
+    console.log("all data has been deleted");
+
+};
+console.log(deleteButton);

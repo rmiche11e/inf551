@@ -60,6 +60,47 @@ weightRef.orderByChild('id')
     document.getElementById('max').innerHTML = Math.max(...weights);
     document.getElementById('cnt').innerHTML = weights.length;
 
+    var svgWidth = 500;
+    var svgHeight = 250;
+
+    var svg = d3.select('svg')
+        .attr("width", svgWidth)
+        .attr("height", svgHeight)
+        .attr("class", "bar-chart");
+
+        var barPadding = 5;
+        var barWidth = (svgWidth / weights.length);
+
+        var barChart = svg.selectAll("rect")
+            .data(weights)
+            .enter()
+            .append("rect")
+            .attr("class", "bar")
+            .attr("y", function(d) {
+                return svgHeight - d
+            })
+            .attr("height", function(d) {
+                return d;
+            })
+            .transition()
+			.duration(500)
+      .delay(function (d, i) {
+				return i * 100;
+			})
+            .attr("width", barWidth - barPadding)
+            .attr("transform", function (d, i) {
+                 var translate = [barWidth * i, 0];
+                 return "translate("+ translate +")";
+
+                 var x = d3.scale.ordinal()
+                 	.domain([0,1,2,3,4,5])
+                     .rangeBands([0,width]);
+
+                 var y = d3.scale.linear()
+                 	.domain([0,42])
+                     .range([height,0]);
+            });
+
 //     var svg = d3.select("body").append("svg")
 //           .attr("height","100%")
 //           .attr("width","100%");

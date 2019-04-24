@@ -8,10 +8,14 @@
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
  </head>
  <body>
- <br/><h1>Heart Rate Records</h1><br/>
+ <br/><h1>Heart Rate Records<span style="float:right;"><a href="index.html"><i class="fas fa-home" style="color:white;"></i></a></span></h1><br/>
  <br/>
  <br/>
+
+ <div class="row">
+   <div class="col-sm text-center">
    <div class= "d-flex justify-content-center" id="recordResults">
+
 <table class="table" style="width:400px">
   <tbody>
   <tr>
@@ -32,6 +36,13 @@
   </tr>
 </tbody>
 </table>
+
+</div>
+</div>
+<div class="col-sm text-center">
+  <h5>Heart Rate Record Distribution</h5>
+  <svg></svg>
+</div>
 </div>
 <div id="mainMenu">
   <br/>
@@ -55,6 +66,7 @@
 </div>
 </div>
  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+ <script src="https://d3js.org/d3.v4.min.js"></script>
  <script type="text/javascript" src="heartrecords.js"></script>
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

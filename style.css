@@ -168,3 +168,13 @@ a:hover{
 th {
   text-align: center;
 }
+
+.bar {
+    fill: #143225;
+}
+
+.pb {
+  background-color: #143225;
+  border-radius: 12px;
+  padding: 14px 40px;
+}

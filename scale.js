@@ -48,7 +48,7 @@ function simulateWeightReading(){
    y.style.display = "inline";
    weightRef.push(weightData, function(){
      console.log("data has been inserted");
-     window.alert("Your weight has been recorded.");
+     // window.alert("Your weight has been recorded.");
      // location.reload(true);
    })
 };

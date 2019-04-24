@@ -31,7 +31,9 @@ usersRef.orderByChild('name')
         user_data = data.val()
         console.log(data.key);
         var a = document.getElementById('record');
+        var b = document.getElementById('review');
         a.setAttribute("href","record.html?id="+data.key);
+        b.setAttribute("href","review.html?id="+data.key);
     });
     console.log(user_data);
     console.log(user_data['name']);

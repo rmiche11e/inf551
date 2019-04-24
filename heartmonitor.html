@@ -8,62 +8,22 @@
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
  </head>
  <body>
- <br/><h1>Weight Records</h1><br/>
+ <br/><h1>Heart Rate Simulator</h1><br/>
+ <div class ="text-center centered">
+ <img src="heart.svg" height="400" width="500">
  <br/>
+ <!-- <button type='button' onclick="weigh()" id="scale">"Get on Scale"</button> -->
+ <button type='button' id="scale">"Record Heart Rate"</button>
  <br/>
-   <div class= "d-flex justify-content-center" id="recordResults">
-<table class="table" style="width:400px">
-  <tbody>
-  <tr>
-    <td>Average Weight:</td>
-    <td id='avg'></td>
-  </tr>
-  <tr>
-    <td>Minimum Weight:</td>
-    <td id='min'></td>
-  </tr>
-  <tr>
-    <td>Maximum Weight:</td>
-    <td id='max'></td>
-  </tr>
-  <tr>
-    <td>Number of Records:</td>
-    <td id='cnt'></td>
-  </tr>
-</tbody>
-</table>
-</div>
-<div id="mainMenu">
-  <br/>
-  <br/>
-  <br/>
-  <div class="row">
-  <div class="col-sm text-center">
-    <a id='record' href="record.html">
-    <i class="fas fa-clipboard-list icon"></i>
-    <br/>
-    <h3> Record Additional Health Data. </h3>
-  </a>
-  </div>
-  <div class="col-sm text-center">
-    <a id="review" href="review.html">
-    <i class="fas fa-chart-bar icon"></i>
-    <br/>
-    <h3> View Additional Health Data. </h3>
-  </a>
-  </div>
-</div>
+<br/>
+ <p style="display:none;" id="message">Your current heart rate is <span id="weight"></span> beats per minute.</p>
+<br/>
+<br/>
+ <p><a href="review_heart.html" id="reviewRecords">View Heart Rate Records</a></p>
+<br/>
 </div>
  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
- <script type="text/javascript" src="weightrecords.js"></script>
- <!-- <script>
- function weigh() {
-   var x = document.getElementById("weight")
-   var y = document.getElementById("message")
-   x.innerHTML = Math.floor((Math.random() * 100) + 100);
-   y.style.display = "inline";
- }
- </script> -->
+ <script type="text/javascript" src="heartrate.js"></script>
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

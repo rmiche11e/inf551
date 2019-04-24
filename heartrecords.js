@@ -11,7 +11,7 @@ var config = {
 // Initialize firebase using our config
 firebase.initializeApp(config);
 const dbRef = firebase.database().ref();
-const weightRef = dbRef.child('weight');
+const heartRef = dbRef.child('heartrate');
 const recordResults = document.getElementById("recordResults");
 
 function getUrlVars() {
@@ -23,42 +23,35 @@ function getUrlVars() {
 };
 
 var vars = getUrlVars();
-// var td_avg = document.getElementById('avg');
-// var td_min = document.getElementById('min');
-// var td_max = document.getElementById('max');
-// var td_cnt = document.getElementById('cnt');
 
-// user_data = {};
-weights = [];
-weightRef.orderByChild('id')
+rates = [];
+heartRef.orderByChild('id')
          .equalTo(vars['id'])
          .on("value", function(snapshot) {
             console.log(snapshot.val());
             snapshot.forEach(function(data) {
-            // user_data = data.val();
-            // weight = user_data.weight;
-            console.log(data.val().weight);
-            weights.push(data.val().weight);
+            console.log(data.val().heart_rate);
+            rates.push(data.val().heart_rate);
 
             // return weights;
              // console.log(data.key);
         // var a = document.getElementById('record');
         // a.setAttribute("href","record.html?id="+data.key);
     })
-    console.log(weights);
+    console.log(rates);
     var total = 0;
-    for(var i = 0; i < weights.length; i++) {
-        total += weights[i];
+    for(var i = 0; i < rates.length; i++) {
+        total += rates[i];
     }
-    var avg = total / weights.length;
-    console.log('Average weight: ', Math.round(avg));
-    console.log('Minimum weight: ', Math.min(...weights));
-    console.log('Maximum weight: ', Math.max(...weights));
-    console.log('Number of records: ', weights.length);
+    var avg = total / rates.length;
+    console.log('Average rate: ', Math.round(avg));
+    console.log('Minimum rate: ', Math.min(...rates));
+    console.log('Maximum rate: ', Math.max(...rates));
+    console.log('Number of records: ', rates.length);
     document.getElementById('avg').innerHTML = Math.round(avg);
-    document.getElementById('min').innerHTML = Math.min(...weights);
-    document.getElementById('max').innerHTML = Math.max(...weights);
-    document.getElementById('cnt').innerHTML = weights.length;
+    document.getElementById('min').innerHTML = Math.min(...rates);
+    document.getElementById('max').innerHTML = Math.max(...rates);
+    document.getElementById('cnt').innerHTML = rates.length;
 
 //     var svg = d3.select("body").append("svg")
 //           .attr("height","100%")

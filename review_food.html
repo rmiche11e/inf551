@@ -8,31 +8,77 @@
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
  </head>
  <body>
- <br/><h1>Weight Records</h1><br/>
+ <br/><h1>Food Log</h1><br/>
  <br/>
  <br/>
-   <div class= "d-flex justify-content-center" id="recordResults">
-<table class="table" style="width:400px">
+   <div class= "d-flex justify-content-center">
+<table class="table" id="foodLog" style="width:600px">
   <tbody>
-  <tr>
-    <td>Average Weight:</td>
-    <td id='avg'></td>
-  </tr>
-  <tr>
-    <td>Minimum Weight:</td>
-    <td id='min'></td>
-  </tr>
-  <tr>
-    <td>Maximum Weight:</td>
-    <td id='max'></td>
-  </tr>
-  <tr>
-    <td>Number of Records:</td>
-    <td id='cnt'></td>
-  </tr>
+    <tr>
+      <th>
+        Food Item
+      </th>
+      <th>
+        Serving Size
+      </th>
+      <th>
+        Edit Entry
+      </th>
+      <th>
+        Remove Entry
+      </th>
+    </tr>
 </tbody>
 </table>
 </div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Edit Entry</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+
+        <form>
+        <input type="hidden" class="edit-entryid">
+
+        <div class="row">
+        <div class="col-sm">
+        Food Item:
+        </div>
+        <div class="col-sm">
+        <input type='text' data-key='food' class='edit-user-input'><br>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-sm">
+        Serving Size:
+        </div>
+        <div class="col-sm">
+        <input type='text' data-key='serving_size' class='edit-user-input'><br>
+        </div>
+        </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+          <button type='button' class="btn btn-default" id="edit-user-btn" data-dismiss="modal">Save Changes</button>
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <div id="mainMenu">
   <br/>
   <br/>
@@ -46,7 +92,7 @@
   </a>
   </div>
   <div class="col-sm text-center">
-    <a href="practitioner.html">
+    <a id="review" href="review.html">
     <i class="fas fa-chart-bar icon"></i>
     <br/>
     <h3> View Additional Health Data. </h3>
@@ -55,7 +101,7 @@
 </div>
 </div>
  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
- <script type="text/javascript" src="weightrecords.js"></script>
+ <script type="text/javascript" src="foodrecords.js"></script>
  <!-- <script>
  function weigh() {
    var x = document.getElementById("weight")

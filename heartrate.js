@@ -12,10 +12,9 @@ var config = {
 firebase.initializeApp(config);
 const dbRef = firebase.database().ref();
 
-const foodLog = document.getElementById("foodlog");
-console.log(foodLog);
+const scaleSimulator = document.getElementById("scale");
 // Create new "event listener" when submit button is clicked
-foodLog.addEventListener("click", recordFoodLog);
+scaleSimulator.addEventListener("click", simulateWeightReading);
 
 function generateTimestamp() {
 var currentdate = new Date();
@@ -37,29 +36,23 @@ function getUrlVars() {
 };
 var vars = getUrlVars();
 
-function recordFoodLog(){
-   const foodLogRef = dbRef.child('foodlog');
+function simulateWeightReading(){
+   const heartRef = dbRef.child('heartrate');
    var id = vars['id'];
    var [date, time] = generateTimestamp()
-   var x = document.getElementById("food");
+   var x = document.getElementById("weight");
    var y = document.getElementById("message");
-   var foodinput = document.getElementsByClassName("foodinput");
-   var food = foodinput[0].value;
-   var serving = foodinput[1].value;
-   console.log(food);
-   console.log(serving);
-   var foodData = {'id': id, 'date': date, 'time': time, 'food': food, 'serving_size': serving};
-   console.log(foodData)
-   // x.innerHTML = weight;
+   var heartrate = Math.floor((Math.random() * 100));
+   var heartData = {'id': id, 'date': date, 'time': time, 'heart_rate': heartrate}
+   x.innerHTML = heartrate;
    y.style.display = "inline";
-   x.innerHTML = food;
-   foodLogRef.push(foodData, function(){
+   heartRef.push(heartData, function(){
      console.log("data has been inserted");
-     // window.alert("Your food has been recorded.");
+     // window.alert("Your weight has been recorded.");
      // location.reload(true);
    })
 };
 
 var a = document.getElementById('reviewRecords');
-a.setAttribute("href","review_food.html?id="+vars['id']);
+a.setAttribute("href","review_heart.html?id="+vars['id']);
 console.log(a);

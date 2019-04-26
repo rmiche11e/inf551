@@ -7,11 +7,18 @@
  <link rel="stylesheet" href="style.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
  </head>
- <body style="overflow:hidden; margin:0">
+ <body>
  <br/><h1>Food Log<span style="float:right;"><a href="index.html"><i class="fas fa-home" style="color:white;"></i></a></span></h1><br/>
- <div class = "main text-center centered">
- <img src="plate.svg" height="600" width="600" class="plate">
- <form class="food">
+ <div class = "main text-center centered" style="background-image: url(plate.svg); background-size: 700px 700px;
+    background-repeat:   no-repeat;
+    background-position: center center;">
+ <!-- <img src="plate.svg" height="600" width="600"> -->
+ <form>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
    <p>Food:</p>
   <input type='text' style="text-align:center;" data-key='name' class='foodinput'><br>
   <br/>
@@ -23,7 +30,6 @@
   <button type='button' id='foodlog'>Record Your Food</button>
 </form>
 <br/>
-
  <!-- <button type='button' onclick="weigh()" id="scale">"Get on Scale"</button> -->
  <p style="display:none;" id="message">Your entry "<span id="food"></span>" has been logged.</p>
  <p><a href="review_food.html" id="reviewRecords">View Nutrition Records</a></p>
@@ -31,14 +37,14 @@
 </div>
  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
  <script type="text/javascript" src="foodlog.js"></script>
- <script language="javascript">
+ <!-- <script language="javascript">
         function autoResizeDiv()
         {
             document.getElementById('main').style.height = window.innerHeight +'px';
         }
         window.onresize = autoResizeDiv;
         autoResizeDiv();
-    </script>
+    </script> -->
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
